@@ -1,0 +1,23 @@
+<div
+  class="h-16 border-b flex items-center justify-between px-6 bg-white">
+
+  <h2 class="font-semibold text-xl">
+    Dashboard
+  </h2>
+
+  <div class="flex items-center gap-4">
+
+    <span>
+      {{ user?.name }}
+    </span>
+
+    <button
+      (click)="logout()"
+      class="bg-red-500 text-white px-4 py-2 rounded-lg">
+
+      Logout
+    </button>
+
+  </div>
+
+</div>

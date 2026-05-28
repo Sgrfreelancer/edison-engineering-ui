@@ -1,0 +1,87 @@
+<form
+  [formGroup]="form"
+  (ngSubmit)="submit()"
+  class="space-y-5">
+
+  <div>
+
+    <label class="block mb-2">
+      Title
+    </label>
+
+    <input
+      type="text"
+      formControlName="title"
+      class="w-full border rounded-lg p-3">
+  </div>
+
+  <div>
+
+    <label class="block mb-2">
+      Slug
+    </label>
+
+    <input
+      type="text"
+      formControlName="slug"
+      class="w-full border rounded-lg p-3">
+  </div>
+
+  <div>
+
+    <label class="block mb-2">
+      Image URL
+    </label>
+
+    <input
+      type="text"
+      formControlName="imageUrl"
+      class="w-full border rounded-lg p-3">
+  </div>
+
+  <div>
+
+    <label class="block mb-2">
+      Meta Title
+    </label>
+
+    <input
+      type="text"
+      formControlName="metaTitle"
+      class="w-full border rounded-lg p-3">
+  </div>
+
+  <div>
+
+    <label class="block mb-2">
+      Meta Description
+    </label>
+
+    <textarea
+      rows="3"
+      formControlName="metaDescription"
+      class="w-full border rounded-lg p-3"></textarea>
+  </div>
+
+  <div>
+
+    <label class="block mb-2">
+      Content
+    </label>
+
+    <textarea
+      rows="10"
+      formControlName="content"
+      class="w-full border rounded-lg p-3"></textarea>
+  </div>
+
+  <button
+    type="submit"
+    [disabled]="loading"
+    class="bg-black text-white px-6 py-3 rounded-lg">
+
+    {{ loading ? 'Saving...' : 'Save Blog' }}
+
+  </button>
+
+</form>

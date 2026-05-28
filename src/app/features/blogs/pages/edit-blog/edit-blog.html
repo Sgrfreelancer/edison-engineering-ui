@@ -1,0 +1,25 @@
+<div class="p-6">
+
+  <h1 class="text-3xl font-bold mb-6">
+    Edit Blog
+  </h1>
+
+  @if (loading) {
+
+    <div>
+      Loading blog...
+    </div>
+
+  }
+
+  @if (!loading && blog) {
+
+    <app-blog-form
+      [blog]="blog"
+      [loading]="loading"
+      (formSubmit)="update($event)">
+    </app-blog-form>
+
+  }
+
+</div>

@@ -1,0 +1,64 @@
+<section
+  class="py-24 bg-white">
+
+  <div
+    class="max-w-7xl mx-auto px-6">
+
+    <div class="text-center mb-16">
+
+      <h2
+        class="text-4xl font-bold mb-5">
+
+        What Our Clients Say
+      </h2>
+
+      <p
+        class="text-gray-600 text-lg">
+
+        Trusted by industries and businesses across Maharashtra.
+
+      </p>
+
+    </div>
+
+    <div
+      class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      @for (
+        item of testimonials;
+        track item.name
+      ) {
+
+        <div
+          class="bg-gray-50 p-8 rounded-3xl shadow-md">
+
+          <p
+            class="text-gray-700 leading-8 mb-8">
+
+            "{{ item.review }}"
+          </p>
+
+          <div>
+
+            <h3
+              class="text-xl font-semibold">
+
+              {{ item.name }}
+            </h3>
+
+            <p
+              class="text-gray-500">
+
+              {{ item.company }}
+            </p>
+
+          </div>
+
+        </div>
+      }
+
+    </div>
+
+  </div>
+
+</section>

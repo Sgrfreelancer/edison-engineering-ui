@@ -1,0 +1,12 @@
+<div>
+
+  <h1 class="text-3xl font-bold mb-6">
+    Create Blog
+  </h1>
+
+  <app-blog-form
+    [loading]="loading"
+    (formSubmit)="save($event)">
+  </app-blog-form>
+
+</div>

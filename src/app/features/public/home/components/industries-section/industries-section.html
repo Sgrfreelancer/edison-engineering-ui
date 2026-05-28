@@ -1,0 +1,48 @@
+<section
+  class="py-24 bg-white">
+
+  <div
+    class="max-w-7xl mx-auto px-6">
+
+    <div class="text-center mb-16">
+
+      <h2
+        class="text-4xl font-bold mb-5">
+
+        Industries We Serve
+      </h2>
+
+      <p
+        class="text-gray-600 text-lg">
+
+        Serving diverse industries with reliable energy solutions.
+
+      </p>
+
+    </div>
+
+    <div
+      class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      @for (
+        industry of industries;
+        track industry
+      ) {
+
+        <div
+          class="bg-blue-50 border border-blue-100 rounded-2xl p-8 text-center hover:shadow-lg transition">
+
+          <h3
+            class="text-2xl font-semibold text-blue-900">
+
+            {{ industry }}
+          </h3>
+
+        </div>
+      }
+
+    </div>
+
+  </div>
+
+</section>
