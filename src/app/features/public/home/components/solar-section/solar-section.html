@@ -1,59 +1,73 @@
-<section
-  class="py-24 bg-gray-100">
+<section class="py-20 bg-white">
 
-  <div
-    class="max-w-7xl mx-auto px-6">
+  <div class="max-w-7xl mx-auto px-6">
 
-    <div class="text-center mb-16">
+    <div class="text-center mb-14">
 
-      <h2
-        class="text-4xl font-bold mb-5">
+      <h2 class="text-4xl font-bold mb-4">
 
-        Solar Energy Solutions
+        Solar Solutions
+
       </h2>
 
-      <p
-        class="text-gray-600 text-lg">
+      <p class="text-gray-600 text-lg">
 
-        Smart solar systems designed for homes and businesses.
+        Modern solar technologies for industries,
+        businesses, and commercial infrastructure.
 
       </p>
 
     </div>
 
     <div
-      class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
       @for (
-        item of solutions;
-        track item.title
+        solar of solarSolutions;
+        track solar.slug
       ) {
 
-        <div
-          class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <a
+          [routerLink]="[
+            '/solar',
+            solar.slug
+          ]"
+          class="bg-gray-50 rounded-2xl overflow-hidden shadow hover:shadow-2xl transition block">
 
           <img
-            [src]="item.image"
-            [alt]="item.title"
-            class="h-64 w-full object-cover">
+            [src]="solar.image"
+            [alt]="solar.title"
+            class="h-56 w-full object-cover">
 
-          <div class="p-8">
+          <div class="p-6">
 
             <h3
-              class="text-2xl font-semibold mb-4">
+              class="text-2xl font-semibold mb-3">
 
-              {{ item.title }}
+              {{ solar.title }}
+
             </h3>
 
-            <p
-              class="text-gray-600 leading-8">
+            <p class="text-gray-600">
 
-              {{ item.description }}
+              {{ solar.description }}
+
             </p>
+
+            <div class="mt-5">
+
+              <span
+                class="text-blue-600 font-semibold">
+
+                Explore Solar Solution →
+
+              </span>
+
+            </div>
 
           </div>
 
-        </div>
+        </a>
       }
 
     </div>

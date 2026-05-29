@@ -1,0 +1,48 @@
+<section
+  class="relative h-[500px] flex items-center justify-center text-white">
+
+  <img
+    [src]="city.heroImage"
+    class="absolute inset-0 w-full h-full object-cover">
+
+  <div
+    class="absolute inset-0 bg-black/60">
+  </div>
+
+  <div class="relative z-10 text-center px-6">
+
+    <h1 class="text-5xl font-bold mb-6">
+
+      {{ city.title }}
+
+    </h1>
+
+    <p class="text-xl max-w-3xl mx-auto">
+
+      {{ city.subtitle }}
+
+    </p>
+
+  </div>
+
+</section>
+
+<section class="py-20">
+
+  <div class="max-w-6xl mx-auto px-6">
+
+    <h2 class="text-4xl font-bold mb-8">
+
+      About Our Services in {{ city.name }}
+
+    </h2>
+
+    <p class="text-lg text-gray-700 leading-8">
+
+      {{ city.description }}
+
+    </p>
+
+  </div>
+
+</section>

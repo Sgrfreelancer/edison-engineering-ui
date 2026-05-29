@@ -1,0 +1,43 @@
+@if (industry) {
+
+<app-industry-hero
+  [title]="industry.title"
+  [subtitle]="industry.subtitle"
+  [image]="industry.heroImage">
+</app-industry-hero>
+
+<section
+  class="max-w-7xl mx-auto px-6 py-20">
+
+  <h2
+    class="text-4xl font-bold mb-6">
+
+    About Industry Solutions
+
+  </h2>
+
+  <p
+    class="text-lg text-gray-700 leading-8">
+
+    {{ industry.description }}
+
+  </p>
+
+</section>
+
+<app-industry-services
+  [services]="industry.services">
+</app-industry-services>
+
+<app-industry-benefits
+  [benefits]="industry.benefits">
+</app-industry-benefits>
+
+<app-industry-faq
+  [faqs]="industry.faqs">
+</app-industry-faq>
+
+<app-industry-cta>
+</app-industry-cta>
+
+}

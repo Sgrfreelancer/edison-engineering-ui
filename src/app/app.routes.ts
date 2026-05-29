@@ -38,6 +38,18 @@ import {
   EditBlog
 } from './features/blogs/pages/edit-blog/edit-blog';
 
+import {
+  SolarSolutionDetails
+} from './features/public/solar-solutions/pages/solar-solution-details/solar-solution-details';
+
+import {
+  IndustryDetails
+} from './features/public/industries/pages/industry-details/industry-details';
+
+import {
+  CityDetails
+} from './features/public/cities/pages/city-details/city-details';
+
 export const routes: Routes = [
 
   /*
@@ -50,10 +62,21 @@ export const routes: Routes = [
     path: '',
     component: PublicLayout,
     children: [
-
       {
         path: '',
         component: PublicHome
+      },
+      {
+        path: 'solar-solutions/:slug',
+        component: SolarSolutionDetails
+      },
+      {
+        path: 'industries/:slug',
+        component: IndustryDetails
+      },
+      {
+        path: 'cities/:slug',
+        component: CityDetails
       }
     ]
   },

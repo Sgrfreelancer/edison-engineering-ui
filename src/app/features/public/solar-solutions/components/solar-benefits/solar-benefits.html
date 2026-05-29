@@ -1,0 +1,34 @@
+<section
+  class="bg-gray-100 py-20">
+
+  <div
+    class="max-w-7xl mx-auto px-6">
+
+    <h2
+      class="text-4xl font-bold mb-10">
+
+      Benefits
+
+    </h2>
+
+    <div
+      class="grid md:grid-cols-2 gap-6">
+
+      @for (
+        benefit of benefits;
+        track benefit
+      ) {
+
+        <div
+          class="bg-white p-6 rounded-2xl shadow">
+
+          {{ benefit }}
+
+        </div>
+      }
+
+    </div>
+
+  </div>
+
+</section>
