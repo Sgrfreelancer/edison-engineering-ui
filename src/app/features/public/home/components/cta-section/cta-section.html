@@ -1,1 +1,81 @@
-<p>cta-section works!</p>
+<section class="relative py-24 overflow-hidden">
+
+
+  <div
+    class="absolute inset-0 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700">
+  </div>
+
+
+  <div
+    class="absolute top-0 left-0 w-72 h-72 bg-white/5 rounded-full blur-3xl">
+  </div>
+
+  <div
+    class="absolute bottom-0 right-0 w-72 h-72 bg-white/5 rounded-full blur-3xl">
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div
+      class="bg-white/10 backdrop-blur-md border border-white/20 rounded-[32px] p-10 lg:p-16">
+
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+
+
+        <div class="lg:col-span-8">
+
+          <span
+            class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-blue-100 text-sm font-medium">
+
+            {{ content.badge }}
+
+          </span>
+
+          <h2
+            class="mt-6 text-4xl lg:text-6xl font-bold text-white leading-tight">
+
+            {{ content.title }}
+
+          </h2>
+
+          <p
+            class="mt-6 text-lg text-blue-100 leading-relaxed max-w-3xl">
+
+            {{ content.description }}
+
+          </p>
+
+        </div>
+
+
+        <div class="lg:col-span-4">
+
+          <div class="flex flex-col gap-4">
+
+            <a
+              [routerLink]="content.primaryButton.route"
+              class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white text-blue-700 font-semibold hover:bg-gray-100 transition-all duration-300">
+
+              {{ content.primaryButton.label }}
+
+            </a>
+
+            <a
+              [routerLink]="content.secondaryButton.route"
+              class="inline-flex items-center justify-center px-8 py-4 rounded-xl border border-white/30 text-white font-semibold hover:bg-white/10 transition-all duration-300">
+
+              {{ content.secondaryButton.label }}
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+     
+    </div>
+
+  </div>
+
+</section>

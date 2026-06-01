@@ -18,71 +18,83 @@
 
       <!-- DESKTOP MENU -->
 
-      <nav
-        class="hidden lg:flex items-center gap-8">
+    <nav
+  class="hidden lg:flex items-center gap-8">
 
-        @for (
-          item of menu;
-          track item.label
-        ) {
+  @for (
+    item of menu;
+    track item.label
+  ) {
 
-          <div class="relative group">
+    <div class="relative group">
 
-            @if (!item.children) {
-
-              <a
-                [routerLink]="item.route"
-                class="text-gray-700 hover:text-blue-700 font-medium">
-
-                {{ item.label }}
-              </a>
-
-            } @else {
-
-              <button
-                class="text-gray-700 hover:text-blue-700 font-medium">
-
-                {{ item.label }}
-              </button>
-
-              <!-- DROPDOWN -->
-
-              <div
-                class="absolute hidden group-hover:block bg-white shadow-xl rounded-xl mt-3 w-80 p-4">
-
-                <div class="space-y-3">
-
-                  @for (
-                    child of item.children;
-                    track child.label
-                  ) {
-
-                    <a
-                      [routerLink]="child.route"
-                      class="block hover:bg-gray-100 p-3 rounded-lg">
-
-                      {{ child.label }}
-                    </a>
-                  }
-
-                </div>
-
-              </div>
-            }
-
-          </div>
-        }
-
-        <!-- CTA -->
+      @if (!item.children) {
 
         <a
-          routerLink="/contact-us"
-          class="bg-blue-700 text-white px-5 py-3 rounded-xl hover:bg-blue-800 transition">
+          [routerLink]="item.route"
+          class="text-gray-700 hover:text-blue-700 font-medium transition-colors">
 
-          Get Free Quote
+          {{ item.label }}
+
         </a>
 
-      </nav>
+      } @else {
+
+        <button
+          class="text-gray-700 hover:text-blue-700 font-medium py-2 transition-colors">
+
+          {{ item.label }}
+
+        </button>
+
+        <!-- DROPDOWN -->
+
+        <div
+          class="absolute left-0 top-full pt-2 hidden group-hover:block z-50">
+
+          <div
+            class="bg-white shadow-xl rounded-xl w-80 p-4 border border-gray-100">
+
+            <div class="space-y-2">
+
+              @for (
+                child of item.children;
+                track child.label
+              ) {
+
+                <a
+                  [routerLink]="child.route"
+                  class="block p-3 rounded-lg hover:bg-gray-100 transition">
+
+                  {{ child.label }}
+
+                </a>
+
+              }
+
+            </div>
+
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+  }
+
+  <!-- CTA -->
+
+  <a
+    routerLink="/contact-us"
+    class="bg-blue-700 text-white px-5 py-3 rounded-xl hover:bg-blue-800 transition">
+
+    Get Free Quote
+
+  </a>
+
+</nav>
 
       <!-- MOBILE BUTTON -->
 

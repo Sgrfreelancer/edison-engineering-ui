@@ -101,5 +101,20 @@ export const PUBLIC_MENU = [
   {
     label: 'Contact Us',
     route: '/contact-us'
-  }
+  },
+   {
+    label: 'Career',
+    children: [
+      {
+        label: 'View Open Positions',
+        route: '/career/careers'
+      },
+     {
+        label: 'Explore Culture',
+        route: '/career/culture'
+      },
+    ]
+  },
+
+
 ];
