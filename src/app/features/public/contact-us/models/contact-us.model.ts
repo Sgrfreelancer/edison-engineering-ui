@@ -1,3 +1,4 @@
+
 export interface ContactInfoItem {
   icon: string;
   title: string;
@@ -6,15 +7,31 @@ export interface ContactInfoItem {
 
 export interface ContactHero {
   title: string;
-  highlight: string;
   description: string;
 }
 
 export interface ContactFormField {
+  name: string;
+  label: string;
   type: string;
   placeholder: string;
+  options?: string[];
 }
 
+export interface ContactCTA {
+  title: string;
+  description: string;
+  buttonText: string;
+}
+export interface ContactModalBrand {
+  badge: string;
+  title: string;
+  highlight: string;
+  description: string;
+}
+export interface ContactModal {
+  brand: ContactModalBrand;
+}
 export interface ContactUsData {
 
   hero: ContactHero;
@@ -23,7 +40,7 @@ export interface ContactUsData {
 
   form: {
     title: string;
-    subtitle: string;
+    description:string;
     fields: ContactFormField[];
     buttonText: string;
   };
@@ -36,10 +53,6 @@ export interface ContactUsData {
     phone: string;
   };
 
-  cta: {
-    title: string;
-    description: string;
-    buttonText: string;
-    phone: string;
-  };
+  cta: ContactCTA;
+  modal: ContactModal;  
 }

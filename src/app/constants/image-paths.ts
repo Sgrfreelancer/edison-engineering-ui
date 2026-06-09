@@ -78,7 +78,7 @@ aboutUs:{
       `${BASE}/banner.jpg`,
 
     culture:
-      `${BASE}/careerbenefits.jpg`,
+      `${BASE}/careerbenefits.avif`,
      gallery: [
     `${BASE}/gallery1.jpg`,
     `${BASE}/gallery2.jpg`,

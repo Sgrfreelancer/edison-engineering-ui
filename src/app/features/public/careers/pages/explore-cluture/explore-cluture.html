@@ -1,7 +1,6 @@
 
-<section class="relative bg-slate-950 text-white overflow-hidden">
-
-  <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900 to-blue-950"></div>
+<section
+  class="bg-gradient-to-br from-slate-950 via-blue-950 to-blue-800  text-white">
 
   <div class="relative max-w-7xl mx-auto px-6 lg:px-10 py-28">
 
@@ -113,36 +112,45 @@
 
 </section>
 
-
-<section class="py-24 bg-white">
+<section class="py-24 bg-gray-50">
 
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
     <div class="text-center mb-16">
 
       <h2 class="text-4xl lg:text-5xl font-bold text-gray-900">
-        {{ cultureData.gallery.title }}
+        {{ cultureData.employeeBenefits.title }}
       </h2>
 
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-     @for (item of cultureData.gallery.images; track item.image) {
+      @for (benefit of cultureData.employeeBenefits.items; track benefit.title) {
 
-  <img
-    [src]="item.image"
-    alt="Career Culture"
-    class="rounded-3xl h-80 w-full object-cover">
+      <div class="bg-white rounded-3xl p-8 shadow-lg">
 
-}
+        <div class="text-5xl">
+          {{ benefit.icon }}
+        </div>
+
+        <h3 class="mt-5 text-xl font-bold">
+          {{ benefit.title }}
+        </h3>
+
+        <p class="mt-3 text-gray-600">
+          {{ benefit.description }}
+        </p>
+
+      </div>
+
+      }
 
     </div>
 
   </div>
 
 </section>
-
 
 <section class="py-24 bg-gray-50">
 
@@ -153,7 +161,7 @@
       <div>
 
         <img
-          [src]="cultureData.benefits.image"
+          [src]="cultureData.workCulture.image"
           alt="Career Benefits"
           class="rounded-3xl shadow-xl w-full">
 
@@ -162,12 +170,12 @@
       <div>
 
         <h2 class="text-4xl lg:text-5xl font-bold text-gray-900">
-          {{ cultureData.benefits.title }}
+          {{ cultureData.workCulture.title }}
         </h2>
 
         <div class="mt-10 space-y-6">
 
-          @for (benefit of cultureData.benefits.items; track benefit) {
+          @for (benefit of cultureData.workCulture.items; track benefit) {
 
           <div class="flex gap-4 items-start">
 

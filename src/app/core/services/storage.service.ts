@@ -38,21 +38,28 @@ export class StorageService {
     );
   }
 
+
   get<T>(
-    key: string
-  ): T | null {
+  key: string
+): T | null {
 
-    if (!this.isBrowser) {
-      return null;
-    }
-
-    const data =
-      localStorage.getItem(key);
-
-    return data
-      ? JSON.parse(data)
-      : null;
+  if (!this.isBrowser) {
+    return null;
   }
+
+  const data =
+    localStorage.getItem(key);
+
+  if (!data) {
+    return null;
+  }
+
+  try {
+    return JSON.parse(data);
+  } catch {
+    return data as T;
+  }
+}
 
   remove(key: string) {
 

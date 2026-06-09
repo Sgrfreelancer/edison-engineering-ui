@@ -115,6 +115,9 @@ export const PUBLIC_MENU = [
       },
     ]
   },
-
+ {
+    label: 'Solar Calculator',
+    route: '/solar-calculator'
+  },
 
 ];

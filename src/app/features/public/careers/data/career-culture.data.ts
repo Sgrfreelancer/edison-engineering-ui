@@ -70,25 +70,8 @@ export const CAREER_CULTURE_DATA: CareerCultureData = {
     ]
   },
 
-  gallery: {
-  title: 'A Place To Learn, Lead & Grow',
-  images: [
-    {
-      image: IMAGE_PATHS.careers.gallery[0]
-    },
-    {
-      image: IMAGE_PATHS.careers.gallery[1]
-    },
-    {
-      image: IMAGE_PATHS.careers.gallery[2]
-    },
-    {
-      image: IMAGE_PATHS.careers.gallery[3]
-    }
-  ]
-},
 
-  benefits: {
+  workCulture: {
     title: 'Why People Love Working Here',
     image: IMAGE_PATHS.careers.culture,
    items: [
@@ -99,14 +82,32 @@ export const CAREER_CULTURE_DATA: CareerCultureData = {
     'Supportive Leadership Team'
   ]
   },
+employeeBenefits: {
+  title: 'Employee Benefits',
 
-//   cta: {
-//     title: 'Ready To Build Your Future?',
-//     description:
-//       "Join a team that's shaping the future of electrical engineering and renewable energy.",
-//     button: {
-//       label: 'View Open Positions',
-//       route: '/career'
-//     }
-//   }
+  items: [
+    {
+      icon: '🏥',
+      title: 'Health Support',
+      description:
+        'Comprehensive health and wellness initiatives.'
+    },
+
+    {
+      icon: '🎓',
+      title: 'Learning Programs',
+      description:
+        'Certifications and technical training support.'
+    },
+
+    {
+      icon: '🏆',
+      title: 'Recognition',
+      description:
+        'Rewards for innovation and exceptional performance.'
+    }
+  ]
+},
+
+
 };

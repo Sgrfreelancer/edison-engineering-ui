@@ -59,6 +59,7 @@ import {
    AboutUsDetails
    } from './features/public/aboutus/pages/about-us-details/about-us-details';
 import { ContactUsDetails } from './features/public/contact-us/pages/contact-us-details/contact-us-details';
+import {SolarCalculator} from './features/public/calculator/pages/solar-calculator/solar-calculator'
 export const routes: Routes = [
 
   /*
@@ -102,6 +103,10 @@ export const routes: Routes = [
       {
         path: 'contact-us',
         component:ContactUsDetails 
+      },
+      {
+        path: 'solar-calculator',
+        component:SolarCalculator 
       },
     ]
   },

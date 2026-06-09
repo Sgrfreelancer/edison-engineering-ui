@@ -14,21 +14,17 @@ export interface CareerCultureValue {
   description: string;
 }
 
-export interface CareerCultureGalleryImage {
-  image: string;
-}
-
-export interface CareerCultureGallery {
-  title: string;
-  images: CareerCultureGalleryImage[];
-}
-
 export interface CareerCultureBenefits {
   title: string;
   image: string;
   items: string[];
-}
+} 
 
+export interface CareerCultureEmployeeBenefit {
+  icon: string;
+  title: string;
+  description: string;
+}
 export interface CareerCultureCTA {
   title: string;
   description: string;
@@ -51,9 +47,14 @@ export interface CareerCultureData {
     items: CareerCultureValue[];
   };
 
-  gallery: CareerCultureGallery;
+ 
 
-  benefits: CareerCultureBenefits;
+   workCulture: CareerCultureBenefits;
+
+  employeeBenefits: {
+    title: string;
+    items: CareerCultureEmployeeBenefit[];
+  };
 
 
 }
