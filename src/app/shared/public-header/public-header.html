@@ -1,94 +1,97 @@
-<header
-  class="bg-white shadow-md sticky top-0 z-50">
+<header class="bg-white shadow-md sticky top-0 z-50">
 
-  <div
-    class="max-w-7xl mx-auto px-6">
+  <div class="max-w-7xl mx-auto px-5">
 
-    <div
-      class="flex items-center justify-between h-20">
+    <div class="flex items-center justify-between h-20">
 
       <!-- LOGO -->
 
-      <a
-        routerLink="/"
-        class="text-2xl font-bold text-blue-700">
+      <a routerLink="/" class="text-2xl font-bold text-blue-700">
 
         Edison Engineering
       </a>
 
       <!-- DESKTOP MENU -->
 
-      <nav
-        class="hidden lg:flex items-center gap-8">
+      <nav class="hidden lg:flex items-center gap-7">
 
         @for (
-          item of menu;
-          track item.label
+        item of menu;
+        track item.label
         ) {
 
-          <div class="relative group">
+        <div class="relative group">
 
-            @if (!item.children) {
+          @if (!item.children) {
 
-              <a
-                [routerLink]="item.route"
-                class="text-gray-700 hover:text-blue-700 font-medium">
+          <a [routerLink]="item.route" [ngClass]="{
+    'text-blue-700 font-semibold border-b-2 border-blue-700': isActive(item.route),
+    'text-gray-700 hover:text-blue-700': !isActive(item.route)
+  }" class="transition-colors">
 
-                {{ item.label }}
-              </a>
+            {{ item.label }}
 
-            } @else {
+          </a>
 
-              <button
-                class="text-gray-700 hover:text-blue-700 font-medium">
+          } @else {
 
-                {{ item.label }}
-              </button>
+          <button [ngClass]="{
+    'text-blue-700 font-semibold border-b-2 border-blue-700': isParentActive(item),
+    'text-gray-700 hover:text-blue-700': !isParentActive(item)
+  }" class="py-2 transition-colors">
 
-              <!-- DROPDOWN -->
+            {{ item.label }}
 
-              <div
-                class="absolute hidden group-hover:block bg-white shadow-xl rounded-xl mt-3 w-80 p-4">
+          </button>
 
-                <div class="space-y-3">
+          <!-- DROPDOWN -->
 
-                  @for (
-                    child of item.children;
-                    track child.label
-                  ) {
+          <div class="absolute left-0 top-full pt-2 hidden group-hover:block z-50">
 
-                    <a
-                      [routerLink]="child.route"
-                      class="block hover:bg-gray-100 p-3 rounded-lg">
+            <div class="bg-white shadow-xl rounded-xl w-80 p-4 border border-gray-100">
 
-                      {{ child.label }}
-                    </a>
-                  }
+              <div class="space-y-2">
 
-                </div>
+                @for (
+                child of item.children;
+                track child.label
+                ) {
+
+                <a [routerLink]="child.route" [ngClass]="{
+               'bg-blue-50 text-blue-700 font-semibold': isActive(child.route),
+                 'hover:bg-gray-100': !isActive(child.route)
+                  }" class="block p-3 rounded-lg transition">
+
+                  {{ child.label }}
+
+                </a>
+                }
 
               </div>
-            }
+
+            </div>
 
           </div>
+
+          }
+
+        </div>
+
         }
 
         <!-- CTA -->
 
-        <a
-          routerLink="/contact-us"
-          class="bg-blue-700 text-white px-5 py-3 rounded-xl hover:bg-blue-800 transition">
+        <a routerLink="/contact-us" class="bg-blue-700 text-white px-5 py-3 rounded-xl hover:bg-blue-800 transition">
 
           Get Free Quote
+
         </a>
 
       </nav>
 
       <!-- MOBILE BUTTON -->
 
-      <button
-        (click)="toggleMobileMenu()"
-        class="lg:hidden text-3xl">
+      <button (click)="toggleMobileMenu()" class="lg:hidden text-3xl">
 
         ☰
       </button>
@@ -101,60 +104,63 @@
 
   @if (mobileMenuOpen) {
 
-    <div
-      class="lg:hidden bg-white border-t">
+  <div class="lg:hidden bg-white border-t">
 
-      <div class="p-5 space-y-4">
+    <div class="p-5 space-y-4">
 
-        @for (
-          item of menu;
-          track item.label
-        ) {
+      @for (
+      item of menu;
+      track item.label
+      ) {
 
-          <div>
+      <div>
 
-            @if (!item.children) {
+        @if (!item.children) {
 
-              <a
-                [routerLink]="item.route"
-                class="block py-2 text-gray-700">
+        <a [routerLink]="item.route" [ngClass]="{
+    'text-blue-700 font-semibold': isActive(item.route),
+    'text-gray-700': !isActive(item.route)
+  }" class="block py-2">
 
-                {{ item.label }}
-              </a>
+          {{ item.label }}
+        </a>
+        } @else {
 
-            } @else {
+        <button [ngClass]="{
+    'text-blue-700 font-semibold border-b-2 border-blue-700': isParentActive(item),
+    'text-gray-700 hover:text-blue-700': !isParentActive(item)
+  }" class="py-2 transition-colors">
 
-              <div
-                class="font-semibold text-gray-900 mb-2">
+          {{ item.label }}
 
-                {{ item.label }}
-              </div>
+        </button>
 
-              <div
-                class="pl-4 space-y-2">
+        <div class="pl-4 space-y-2">
 
-                @for (
-                  child of item.children;
-                  track child.label
-                ) {
+          @for (
+          child of item.children;
+          track child.label
+          ) {
 
-                  <a
-                    [routerLink]="child.route"
-                    class="block text-gray-600">
+          <a [routerLink]="child.route" [ngClass]="{
+    'bg-blue-50 text-blue-700 font-semibold': isActive(child.route),
+    'hover:bg-gray-100': !isActive(child.route)
+  }" class="block p-3 rounded-lg transition">
 
-                    {{ child.label }}
-                  </a>
-                }
+            {{ child.label }}
 
-              </div>
-            }
+          </a>
+          }
 
-          </div>
+        </div>
         }
 
       </div>
+      }
 
     </div>
+
+  </div>
   }
 
 </header>

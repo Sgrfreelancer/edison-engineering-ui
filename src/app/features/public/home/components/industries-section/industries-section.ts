@@ -5,7 +5,7 @@ import {
 import {
   RouterLink
 } from '@angular/router';
-
+import { IMAGE_PATHS } from '../../../../../constants/image-paths';
 @Component({
   selector: 'app-industries-section',
   imports: [
@@ -23,8 +23,7 @@ export class IndustriesSection {
 
       slug: 'manufacturing-plants',
 
-      image:
-        'https://images.unsplash.com/photo-1509391366360-2e959784a276',
+       image: IMAGE_PATHS.industries.manufacturing,
 
       description:
         'Industrial electrical infrastructure and solar solutions.'
@@ -35,8 +34,8 @@ export class IndustriesSection {
 
       slug: 'commercial-buildings',
 
-      image:
-        'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab',
+      image: IMAGE_PATHS.industries.commercial,
+       
 
       description:
         'Electrical systems for offices and commercial complexes.'
@@ -47,8 +46,8 @@ export class IndustriesSection {
 
       slug: 'housing-societies',
 
-      image:
-        'https://images.unsplash.com/photo-1460317442991-0ec209397118',
+       image: IMAGE_PATHS.industries.housing,
+      
 
       description:
         'Reliable electrical and solar systems for societies.'
@@ -59,8 +58,8 @@ export class IndustriesSection {
 
       slug: 'warehouses',
 
-      image:
-        'https://images.unsplash.com/photo-1517048676732-d65bc937f952',
+       image: IMAGE_PATHS.industries.warehouse,
+        
 
       description:
         'Efficient warehouse electrical infrastructure solutions.'
@@ -71,8 +70,7 @@ export class IndustriesSection {
 
       slug: 'hospitals',
 
-      image:
-        'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d',
+       image: IMAGE_PATHS.industries.hospital,
 
       description:
         'Critical electrical systems for healthcare facilities.'
@@ -83,8 +81,8 @@ export class IndustriesSection {
 
       slug: 'educational-institutes',
 
-      image:
-        'https://images.unsplash.com/photo-1523050854058-8df90110c9f1',
+       image: IMAGE_PATHS.industries.education,
+       
 
       description:
         'Safe and modern campus electrical infrastructure.'

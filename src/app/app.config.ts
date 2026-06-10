@@ -25,12 +25,15 @@ import {
 import {
   authInterceptor
 } from './interceptors/auth-interceptor';
+import { provideToastr } from 'ngx-toastr';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig:
 ApplicationConfig = {
 
   providers: [
-
+ provideAnimations(),
+     provideToastr(),
     provideBrowserGlobalErrorListeners(),
 
     provideRouter(routes),

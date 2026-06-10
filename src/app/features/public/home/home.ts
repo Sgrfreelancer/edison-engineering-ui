@@ -33,7 +33,7 @@ import {
 import {
   CtaSection
 } from './components/cta-section/cta-section';
-
+import  {CareerSection} from './components/career-section/career-section'
 @Component({
   selector: 'app-home',
   imports: [
@@ -43,8 +43,9 @@ import {
     IndustriesSection,
     WhyChooseUs,
     CitiesSection,
+    CareerSection,
     TestimonialsSection,
-    CtaSection
+    CtaSection,
   ],
   templateUrl: './home.html',
   styleUrl: './home.scss'

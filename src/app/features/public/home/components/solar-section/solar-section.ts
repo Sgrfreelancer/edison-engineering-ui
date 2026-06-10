@@ -5,7 +5,7 @@ import {
 import {
   RouterLink
 } from '@angular/router';
-
+import { IMAGE_PATHS } from '../../../../../constants/image-paths';
 @Component({
   selector: 'app-solar-section',
   imports: [
@@ -23,8 +23,8 @@ export class SolarSection {
 
       slug: 'on-grid-solar',
 
-      image:
-        'https://images.unsplash.com/photo-1509391366360-2e959784a276',
+      image:IMAGE_PATHS.solarSolutions.onGridSolar,
+       
 
       description:
         'Reduce electricity bills with efficient grid-connected solar systems.'
@@ -35,8 +35,8 @@ export class SolarSection {
 
       slug: 'off-grid-solar',
 
-      image:
-        'https://images.unsplash.com/photo-1497440001374-f26997328c1b',
+      image:IMAGE_PATHS.solarSolutions.offGridSolar,
+        
 
       description:
         'Independent solar systems with battery backup.'
@@ -47,8 +47,8 @@ export class SolarSection {
 
       slug: 'hybrid-solar',
 
-      image:
-        'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e',
+      image:IMAGE_PATHS.solarSolutions.hybridSolar,
+       
 
       description:
         'Smart hybrid systems with grid and battery support.'
