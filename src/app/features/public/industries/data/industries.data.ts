@@ -1,7 +1,7 @@
 import {
   Industry
 } from '../models/industry.model';
-
+import { IMAGE_PATHS } from '../../../../constants/image-paths';
 export const INDUSTRIES: Industry[] = [
 
   {
@@ -13,8 +13,7 @@ export const INDUSTRIES: Industry[] = [
     subtitle:
       'Complete industrial electrical infrastructure and solar solutions for manufacturing facilities.',
 
-    heroImage:
-      'https://images.unsplash.com/photo-1509391366360-2e959784a276',
+    heroImage:IMAGE_PATHS.industries.manufacturing,
 
     description:
       'We provide complete electrical contracting, industrial panel setup, transformer installation, energy audits, and industrial solar solutions for manufacturing plants across Maharashtra.',
@@ -62,7 +61,7 @@ export const INDUSTRIES: Industry[] = [
       'Modern electrical systems for offices, malls, and commercial complexes.',
 
     heroImage:
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab',
+      IMAGE_PATHS.industries.commercial,
 
     description:
       'We provide electrical design, installation, maintenance, and solar solutions for commercial buildings ensuring safety, efficiency, and uninterrupted operations.',
@@ -110,7 +109,7 @@ export const INDUSTRIES: Industry[] = [
       'Reliable electrical and solar solutions for residential societies.',
 
     heroImage:
-      'https://images.unsplash.com/photo-1460317442991-0ec209397118',
+      IMAGE_PATHS.industries.housing,
 
     description:
       'We help housing societies with common area electrification, solar systems, electrical safety audits, backup systems, and maintenance services.',
@@ -158,7 +157,7 @@ export const INDUSTRIES: Industry[] = [
       'Efficient electrical infrastructure for warehouses and logistics hubs.',
 
     heroImage:
-      'https://images.unsplash.com/photo-1517048676732-d65bc937f952',
+      IMAGE_PATHS.industries.warehouse,
 
     description:
       'We provide electrical setup, warehouse lighting, backup systems, and energy-efficient infrastructure for warehouses and logistics operations.',
@@ -206,7 +205,7 @@ export const INDUSTRIES: Industry[] = [
       'Critical power and electrical systems for hospitals and healthcare facilities.',
 
     heroImage:
-      'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d',
+      IMAGE_PATHS.industries.hospital,
 
     description:
       'We provide reliable electrical systems, emergency backup solutions, and energy-efficient infrastructure for hospitals and healthcare institutions.',
@@ -254,7 +253,7 @@ export const INDUSTRIES: Industry[] = [
       'Safe and efficient electrical infrastructure for schools and colleges.',
 
     heroImage:
-      'https://images.unsplash.com/photo-1523050854058-8df90110c9f1',
+     IMAGE_PATHS.industries.education,
 
     description:
       'We provide complete electrical setup, campus lighting, solar systems, and safety infrastructure for educational institutions.',

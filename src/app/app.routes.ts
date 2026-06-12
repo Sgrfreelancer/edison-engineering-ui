@@ -60,6 +60,8 @@ import {
    } from './features/public/aboutus/pages/about-us-details/about-us-details';
 import { ContactUsDetails } from './features/public/contact-us/pages/contact-us-details/contact-us-details';
 import {SolarCalculator} from './features/public/calculator/pages/solar-calculator/solar-calculator'
+import { BlogDetails } from './features/public/blog/pages/blog-details/blog-details';
+import { ServicesSection } from './features/public/home/components/services-section/services-section';
 export const routes: Routes = [
 
   /*
@@ -75,6 +77,10 @@ export const routes: Routes = [
       {
         path: '',
         component: PublicHome
+      },
+       {
+        path: 'services/:slug',
+        component: ServicesSection
       },
       {
         path: 'solar-solutions/:slug',
@@ -93,7 +99,7 @@ export const routes: Routes = [
         component: ExploreCluture
       },
       {
-        path: 'career/:slug',
+        path: 'career/careers',
         component: JobDetails
       },
       {
@@ -107,6 +113,10 @@ export const routes: Routes = [
       {
         path: 'solar-calculator',
         component:SolarCalculator 
+      },
+      {
+        path: 'blogs',
+        component:BlogDetails 
       },
     ]
   },

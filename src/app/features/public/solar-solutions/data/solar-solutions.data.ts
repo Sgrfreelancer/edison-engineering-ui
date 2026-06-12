@@ -1,7 +1,7 @@
 import {
   SolarSolution
 } from '../models/solar-solution.model';
-
+import { IMAGE_PATHS } from '../../../../constants/image-paths';
 export const SOLAR_SOLUTIONS:
 SolarSolution[] = [
 
@@ -13,9 +13,7 @@ SolarSolution[] = [
     subtitle:
       'Reduce electricity bills with grid-connected solar systems.',
 
-    heroImage:
-      'https://images.unsplash.com/photo-1509391366360-2e959784a276',
-
+    heroImage:IMAGE_PATHS.solarSolutions.onGridSolar,
     description:
       'On-grid solar systems are connected with the electricity grid and help reduce power bills significantly.',
 
@@ -60,8 +58,79 @@ SolarSolution[] = [
     subtitle:
       'Complete energy independence with battery backup.',
 
-    heroImage:
-      'https://images.unsplash.com/photo-1497440001374-f26997328c1b',
+    heroImage: IMAGE_PATHS.solarSolutions.offGridSolar,
+
+    description:
+      'Off-grid systems operate independently using battery storage.',
+
+    benefits: [
+      'Power backup',
+      'No dependency on grid',
+      'Ideal for remote locations'
+    ],
+
+    process: [
+      'Energy assessment',
+      'Battery planning',
+      'Solar installation',
+      'Battery integration'
+    ],
+
+    faqs: [
+      {
+        question:
+          'Who should use off-grid systems?',
+
+        answer:
+          'Remote locations with unreliable electricity.'
+      }
+    ]
+  },
+  {
+    slug: 'hybrid-solar-systems',
+
+    title: 'Hybrid Solar Systems',
+
+    subtitle:
+      'Complete energy independence with battery backup.',
+
+    heroImage: IMAGE_PATHS.solarSolutions.hybridSolar,
+
+    description:
+      'Off-grid systems operate independently using battery storage.',
+
+    benefits: [
+      'Power backup',
+      'No dependency on grid',
+      'Ideal for remote locations'
+    ],
+
+    process: [
+      'Energy assessment',
+      'Battery planning',
+      'Solar installation',
+      'Battery integration'
+    ],
+
+    faqs: [
+      {
+        question:
+          'Who should use off-grid systems?',
+
+        answer:
+          'Remote locations with unreliable electricity.'
+      }
+    ]
+  },
+   {
+    slug: 'solar-amc-services',
+
+    title: 'Solar AMC Services',
+
+    subtitle:
+      'Complete energy independence with battery backup.',
+
+    heroImage: IMAGE_PATHS.solarSolutions.hybridSolar,
 
     description:
       'Off-grid systems operate independently using battery storage.',

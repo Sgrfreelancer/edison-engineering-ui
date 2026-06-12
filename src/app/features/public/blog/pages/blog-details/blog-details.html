@@ -1,0 +1,151 @@
+<section class="py-24 bg-white overflow-hidden">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <!-- Header -->
+
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+
+      <div>
+
+        <span
+          class="inline-flex px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-medium">
+
+          {{ blogData.badge }}
+
+        </span>
+
+        <h2
+          class="mt-6 text-4xl lg:text-5xl font-bold text-gray-900">
+
+          {{ blogData.title }}
+
+          <span class="text-blue-600">
+            {{ blogData.highlight }}
+          </span>
+
+        </h2>
+
+        <p
+          class="mt-6 text-lg text-gray-600 max-w-3xl leading-relaxed">
+
+          {{ blogData.description }}
+
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- Blog Grid -->
+
+    <div class="grid lg:grid-cols-12 gap-8 mt-16">
+
+      <!-- Featured Blog -->
+
+      <div class="lg:col-span-6">
+
+        <article
+          class="group bg-gray-50 rounded-3xl overflow-hidden h-full hover:shadow-2xl transition-all duration-300">
+
+          <div class="overflow-hidden">
+
+            <img
+              [src]="blogData.featuredBlog.image"
+              [alt]="blogData.featuredBlog.title"
+              class="w-full h-[350px] object-cover group-hover:scale-105 transition duration-500">
+
+          </div>
+
+          <div class="p-8">
+
+            <span
+              class="inline-flex px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm">
+
+              {{ blogData.featuredBlog.category }}
+
+            </span>
+
+            <h3
+              class="mt-5 text-3xl font-bold text-gray-900">
+
+              {{ blogData.featuredBlog.title }}
+
+            </h3>
+
+            <p
+              class="mt-4 text-gray-600 leading-relaxed">
+
+              {{ blogData.featuredBlog.description }}
+
+            </p>
+
+            <a
+              [routerLink]="blogData.featuredBlog.route"
+              class="inline-flex items-center mt-6 text-blue-600 font-semibold">
+
+              {{ blogData.featuredBlog.buttonText }}
+
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+      <!-- Side Blogs -->
+
+      <div class="lg:col-span-6">
+
+        <div class="space-y-6">
+
+          @for (blog of blogData.blogs; track blog.title) {
+
+            <article
+              class="group flex gap-5 bg-gray-50 rounded-3xl p-5 hover:shadow-xl transition">
+
+              <img
+                [src]="blog.image"
+                [alt]="blog.title"
+                class="w-36 h-32 object-cover rounded-2xl">
+
+              <div>
+
+                <span
+                  class="text-blue-600 text-sm font-medium">
+
+                  {{ blog.category }}
+
+                </span>
+
+                <h3
+                  class="mt-2 text-xl font-bold text-gray-900">
+
+                  {{ blog.title }}
+
+                </h3>
+
+                <a
+                  [routerLink]="blog.route"
+                  class="inline-flex mt-4 text-blue-600 font-semibold">
+
+                  {{ blog.buttonText }}
+
+                </a>
+
+              </div>
+
+            </article>
+
+          }
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

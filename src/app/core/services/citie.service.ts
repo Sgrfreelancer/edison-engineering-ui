@@ -1,24 +1,16 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
-import { LeadPayload } from '../model/lead.model';
-
+import { City } from '../model/citie.model';
 @Injectable({
   providedIn: 'root'
 })
-export class LeadService {
+export class CityService {
 
   private http = inject(HttpClient);
-
-  private leadUrl = `${environment.apiUrl}/leads`;
-
-  createLead(payload: LeadPayload) {
-
-
-    return this.http.post(
-      this.leadUrl,
-      payload
-    );
+ private citieurl = `${environment.apiUrl}/cities`;
+  getCities(): Observable<any> {
+    return this.http.get(this.citieurl);
   }
 }

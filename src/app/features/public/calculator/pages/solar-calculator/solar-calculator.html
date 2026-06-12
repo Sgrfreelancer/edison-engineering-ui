@@ -1,4 +1,3 @@
-
 <section class="bg-gradient-to-b from-blue-50 via-white to-white">
 
     <div class="max-w-7xl mx-auto px-6 py-32 lg:px-10">
@@ -11,78 +10,43 @@
 
                 <span class="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-medium">
 
-                    ⚡ Smart Solar Calculator
+                    {{ solarData.badge }}
 
                 </span>
+
                 <h1 class="mt-8 text-5xl lg:text-7xl font-bold leading-tight text-gray-900">
 
-                    Power Your Future
+                    {{ solarData.hero.title }}
 
                     <span class="block text-blue-600">
-                        With Solar Energy
+                        {{ solarData.hero.highlight }}
                     </span>
 
                 </h1>
 
                 <p class="mt-8 text-xl text-gray-600 leading-relaxed">
 
-                    Harness the power of solar energy to reduce
-                    electricity costs and increase long-term savings.
-
-                    Edison Engineering delivers industrial,
-                    commercial and residential solar solutions.
+                    {{ solarData.hero.description }}
 
                 </p>
 
+                <!-- Buttons -->
+
                 <div class="mt-10 flex flex-wrap gap-4">
 
-                    <a routerLink="/contact-us"
+                    <a [routerLink]="solarData.buttons.quoteRoute"
                         class="px-8 py-4 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">
 
-                        Get Free Quote →
+                        {{ solarData.buttons.quoteText }}
 
                     </a>
 
-                    <a href="tel:+919876543210"
-                        class="px-8 py-4 rounded-xl border border-gray-300 bg-white font-semibold">
+                    <a [href]="'tel:' + solarData.buttons.phone"
+                        class="px-8 py-4 rounded-xl border border-gray-300 bg-white font-semibold hover:bg-gray-50 transition">
 
-                        📞 Call Us
+                        {{ solarData.buttons.callText }}
 
                     </a>
-
-                </div>
-
-                <!-- Stats -->
-
-                <div class="grid grid-cols-2 gap-10 mt-16">
-
-                    <div>
-
-                        <h3 class="text-4xl font-bold text-blue-600">
-
-                            250+
-
-                        </h3>
-
-                        <p class="text-gray-600">
-                            Solar Projects
-                        </p>
-
-                    </div>
-
-                    <div>
-
-                        <h3 class="text-4xl font-bold text-blue-600">
-
-                            15MW+
-
-                        </h3>
-
-                        <p class="text-gray-600">
-                            Installed Capacity
-                        </p>
-
-                    </div>
 
                 </div>
 
@@ -96,17 +60,17 @@
 
                     <h2 class="text-3xl font-bold text-gray-900">
 
-                        Estimate Your Savings
+                        {{ solarData.calculator.title }}
 
                     </h2>
 
                     <p class="mt-2 text-gray-500">
 
-                        See how much you could save with solar.
+                        {{ solarData.calculator.description }}
 
                     </p>
 
-                    <!-- State -->
+                    <!-- Location -->
 
                     <div class="mt-8">
 
@@ -116,14 +80,14 @@
 
                         </label>
 
-                        <select class="w-full px-5 py-4 border border-gray-300 rounded-xl">
+                         <select [(ngModel)]="selectedLocation"
+                            class="w-full px-5 py-4 border border-gray-300 rounded-xl">
 
-                            <option>Gujarat</option>
-                            <option>Maharashtra</option>
-                            <option>Rajasthan</option>
+                            <option *ngFor="let city of cities" [value]="city.name">
+                                {{ city.name }}
+                            </option>
 
                         </select>
-
                     </div>
 
                     <!-- Bill -->
@@ -133,7 +97,9 @@
                         <div class="flex justify-between mb-3">
 
                             <span class="font-medium">
+
                                 Monthly Electricity Bill
+
                             </span>
 
                             <span class="font-bold text-blue-600">
@@ -144,8 +110,9 @@
 
                         </div>
 
-                        <input type="range" min="1000" max="100000" step="500" [(ngModel)]="monthlyBill"
-                            (input)="calculate()" class="w-full">
+                        <input type="range" [min]="solarData.calculator.billRange.min"
+                            [max]="solarData.calculator.billRange.max" [step]="solarData.calculator.billRange.step"
+                            [(ngModel)]="monthlyBill" class="w-full">
 
                     </div>
 
@@ -153,24 +120,25 @@
 
                     <div class="grid grid-cols-2 gap-4 mt-8">
 
-                        <div class="bg-green-50 rounded-2xl p-5 text-center">
+                        <!-- Annual Savings -->
 
-                            <div class="bg-blue-50 rounded-2xl p-5 text-center">
+                        <div class="bg-blue-50 rounded-2xl p-5 text-center">
 
-                                <h3 class="text-3xl font-bold text-blue-600">
+                            <h3 class="text-3xl font-bold text-blue-600">
 
-                                    ₹{{ annualSavings | number }}
+                                ₹{{ annualSavings | number }}
 
-                                </h3>
+                            </h3>
 
-                            </div>
-                            <p class="text-sm text-gray-500">
-                                Annual Savings
+                            <p class="text-sm text-gray-500 mt-2">
+
+                                {{ solarData.calculator.resultCards.annualSavings.title }}
+
                             </p>
 
                         </div>
 
-                        <!-- CO2 Offset -->
+                        <!-- CO2 -->
 
                         <div class="bg-sky-50 rounded-2xl p-5 text-center">
 
@@ -180,13 +148,15 @@
 
                             </h3>
 
-                            <p class="text-sm text-gray-500">
-                                Tons CO₂ Offset
+                            <p class="text-sm text-gray-500 mt-2">
+
+                                {{ solarData.calculator.resultCards.co2Offset.title }}
+
                             </p>
 
                         </div>
 
-                        <!-- Payback Years -->
+                        <!-- Payback -->
 
                         <div class="bg-indigo-50 rounded-2xl p-5 text-center">
 
@@ -196,36 +166,42 @@
 
                             </h3>
 
-                            <p class="text-sm text-gray-500">
-                                Payback Years
+                            <p class="text-sm text-gray-500 mt-2">
+
+                                {{ solarData.calculator.resultCards.paybackYears.title }}
+
                             </p>
 
                         </div>
 
-                        <div class="bg-blue-50 rounded-2xl p-5 text-center">
+                        <!-- Recommended KW -->
 
-                            <div class="bg-indigo-50 rounded-2xl p-5 text-center">
+                        <div class="bg-green-50 rounded-2xl p-5 text-center">
 
-                                <h3 class="text-3xl font-bold text-indigo-600">
+                            <h3 class="text-3xl font-bold text-green-600">
 
-                                    {{ recommendedKW }}
+                                {{ recommendedKW }}
 
-                                </h3>
+                            </h3>
 
-                            </div>
+                            <p class="text-sm text-gray-500 mt-2">
 
-                            <p class="text-sm text-gray-500">
-                                kW System
+                                {{ solarData.calculator.resultCards.recommendedKW.title }}
+
                             </p>
 
                         </div>
 
                     </div>
 
-                    <button routerLink="/contact"
-                        class="w-full mt-8 py-4 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">
+                    <!-- CTA -->
 
-                        Get Free Solar Assessment
+                    
+
+                    <button type="button" (click)="calculate()" [disabled]="!selectedLocation || isLoading"
+                        class="w-full mt-8 py-4 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed">
+
+                        {{ isLoading ? 'Calculating...' : solarData.calculator.buttonText }}
 
                     </button>
 

@@ -8,7 +8,7 @@ export const CAREER_CULTURE_DATA: CareerCultureData = {
 
     primaryButton: {
       label: 'View Open Positions',
-      route: '/career'
+     route: '/career/careers'
     },
 
     secondaryButton: {
