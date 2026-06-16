@@ -62,15 +62,16 @@ implements OnInit {
 
   solution:
     SolarSolution | undefined;
-
   ngOnInit(): void {
 
-    const slug =
-      this.route.snapshot.paramMap.get('slug');
+  this.route.paramMap.subscribe(params => {
 
-    this.solution =
-      SOLAR_SOLUTIONS.find(
-        x => x.slug === slug
-      );
-  }
+    const slug = params.get('slug');
+
+    this.solution = SOLAR_SOLUTIONS.find(
+      item => item.slug === slug
+    );
+  });
+
+}
 }

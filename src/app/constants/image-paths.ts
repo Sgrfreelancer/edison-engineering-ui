@@ -2,7 +2,7 @@ import { environment } from '../../environments/environment';
 const BASE = environment.imageBaseUrl;
 
 export const IMAGE_PATHS = {
-
+logo:`${BASE}/EDISON LOGO.jpeg`,
 home:{
   homebanner:
   `${BASE}/homebanner.jpg`
@@ -60,6 +60,9 @@ aboutUs:{
     hybridSolar:
       `${BASE}/hybrid-solar.jpg`,
   },
-
+services:{
+  residential: `${BASE}/on-grid-solar.jpg`,
+  commercial:`${BASE}/hybrid-solar.jpg`,
+}
   
 };

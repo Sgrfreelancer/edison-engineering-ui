@@ -1,26 +1,50 @@
 import {
   Component
 } from '@angular/core';
-
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-cities-section',
   templateUrl: './cities-section.html',
+ imports: [
+  CommonModule,
+    RouterModule
+  ],
   styleUrl: './cities-section.scss'
 })
 export class CitiesSection {
 
   cities = [
 
-    'Pune',
+    {
+      name: 'Pune',
+      slug: 'pune'
+    },
 
-    'Mumbai',
+    {
+      name: 'Mumbai',
+      slug: 'mumbai'
+    },
 
-    'Nashik',
+    {
+      name: 'Nashik',
+      slug: 'nashik'
+    },
 
-    'Sambhaji Nagar',
+    {
+    name: 'Chhatrapati Sambhajinagar',
+    slug: 'chhatrapati-sambhajinagar'
+  },
 
-    'Nandurbar',
+    {
+      name: 'Nandurbar',
+      slug: 'nandurbar'
+    },
 
-    'Shahada'
+    {
+      name: 'Shahada',
+      slug: 'shahada'
+    }
+
   ];
 }
