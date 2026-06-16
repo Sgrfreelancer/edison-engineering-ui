@@ -21,23 +21,21 @@
 
     </div>
 
-    <div
-      class="flex flex-wrap justify-center gap-5">
+  <div class="flex flex-wrap justify-center gap-5">
 
-      @for (
-        city of cities;
-        track city
-      ) {
+  @for (city of cities; track city.slug) {
 
-        <div
-          class="bg-white px-8 py-4 rounded-full shadow-md hover:shadow-xl transition">
+    <a
+      [routerLink]="['/cities', city.slug]"
+      class="bg-white px-8 py-4 rounded-full shadow-md hover:shadow-xl transition cursor-pointer">
 
-          {{ city }}
+      {{ city.name }}
 
-        </div>
-      }
+    </a>
 
-    </div>
+  }
+
+</div>
 
   </div>
 

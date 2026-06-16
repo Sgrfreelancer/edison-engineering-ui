@@ -61,7 +61,7 @@ import {
 import { ContactUsDetails } from './features/public/contact-us/pages/contact-us-details/contact-us-details';
 import {SolarCalculator} from './features/public/calculator/pages/solar-calculator/solar-calculator'
 import { BlogDetails } from './features/public/blog/pages/blog-details/blog-details';
-import { ServicesSection } from './features/public/home/components/services-section/services-section';
+import { ServiceDetails } from './features/public/service/pages/service-details/service-details';
 export const routes: Routes = [
 
   /*
@@ -80,7 +80,7 @@ export const routes: Routes = [
       },
        {
         path: 'services/:slug',
-        component: ServicesSection
+        component: ServiceDetails
       },
       {
         path: 'solar-solutions/:slug',

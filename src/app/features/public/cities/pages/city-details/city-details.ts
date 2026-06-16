@@ -25,14 +25,18 @@ implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-  ngOnInit(): void {
+   ngOnInit(): void {
 
-    const slug =
-      this.route.snapshot.paramMap.get('slug');
+    this.route.paramMap.subscribe(params => {
 
-    this.city =
-      CITIES.find(
-        x => x.slug === slug
+      const slug = params.get('slug');
+
+      this.city = CITIES.find(
+        item => item.slug === slug
       );
+    });
+
   }
+
 }
+

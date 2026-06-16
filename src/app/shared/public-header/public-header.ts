@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs';
+import { IMAGE_PATHS } from '../../constants/image-paths';
 @Component({
   selector: 'app-public-header',
   imports: [
@@ -22,6 +23,7 @@ import { filter } from 'rxjs';
   styleUrl: './public-header.scss'
 })
 export class PublicHeader {
+imagePaths = IMAGE_PATHS;
 
   menu =
     PUBLIC_MENU;

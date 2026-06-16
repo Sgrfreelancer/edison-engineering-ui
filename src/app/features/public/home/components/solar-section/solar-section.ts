@@ -52,6 +52,17 @@ export class SolarSection {
 
       description:
         'Smart hybrid systems with grid and battery support.'
+    },
+    {
+      title: 'Solar AMC Service',
+
+      slug: 'solar-amc-services',
+
+      image:IMAGE_PATHS.solarSolutions.hybridSolar,
+       
+
+      description:
+        'Smart hybrid systems with grid and battery support.'
     }
   ];
 }
