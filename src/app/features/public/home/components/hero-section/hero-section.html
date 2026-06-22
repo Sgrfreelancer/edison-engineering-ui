@@ -1,55 +1,40 @@
+<section class="bg-gradient-to-br from-slate-950 via-blue-950 to-blue-800  text-white">
+  <div class="max-w-7xl mx-auto px-6 py-24">
 
-<section
-  class="bg-gradient-to-br from-slate-950 via-blue-950 to-blue-800  text-white">
-  <div
-    class="max-w-7xl mx-auto px-6 py-24">
-
-    <div
-      class="grid lg:grid-cols-2 gap-14 items-center">
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
 
 
       <div>
 
-        <div
-          class="inline-block bg-white/10 px-4 py-2 rounded-full mb-6">
+        <div class="inline-block bg-white/10 px-4 py-2 rounded-full mb-6">
 
-          Trusted Electrical & Solar Experts
+          {{ content.badge }}
         </div>
 
-        <h1
-          class="text-5xl lg:text-6xl font-bold leading-tight">
+        <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
 
-          Powering India With
-          Smart Electrical &
-          Solar Solutions
+          {{ content.title }}
 
         </h1>
 
-        <p
-          class="mt-8 text-xl text-blue-100 leading-9">
+        <p class="mt-8 text-xl text-blue-100 leading-9">
 
-          Edison Engineering delivers
-          industrial, commercial and solar
-          energy solutions designed for
-          efficiency, safety and sustainability.
+          {{ content.description }}
 
         </p>
 
-        <div
-          class="mt-10 flex flex-wrap gap-5">
+        <div class="mt-10 flex flex-wrap gap-5">
 
-          <a
-            routerLink="/contact-us"
+          <button type="button" (click)="openContactModal()"
             class="bg-white text-blue-800 px-7 py-4 rounded-xl font-semibold hover:bg-gray-100 transition">
 
-            Get Free Quote
-          </a>
+            {{ content.primaryButton.label }}
 
-          <a
-            routerLink="/services"
+          </button>
+          <a [routerLink]="content.secondaryButton.route"
             class="border border-white px-7 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-800 transition">
 
-            Explore Services
+            {{ content.secondaryButton.label }}
           </a>
 
         </div>
@@ -59,13 +44,10 @@
 
       <div>
 
-        <img
-           [src]="imagesource.home.homebanner"
-          alt="Solar Energy"
-          class="rounded-3xl shadow-2xl w-full h-[500px] object-cover">
+        <img [src]="content.image" alt="Solar Energy" class="rounded-3xl shadow-2xl w-full h-[500px] object-cover">
 
       </div>
-     
+
     </div>
 
   </div>

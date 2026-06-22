@@ -4,15 +4,27 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Service } from '../../models/service.model';
 import { SERVICES } from '../../data/services.data';
+import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
+import { ContactPopupService } from '../../../../../core/services/contact-popup-service';
 @Component({
   selector: 'app-service-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterModule],
   templateUrl: './service-details.html',
   styleUrl: './service-details.scss'
 })
 export class ServiceDetails implements OnInit {
+  constructor(private router: Router,private popup: ContactPopupService,) {}
+  openContactModal(): void {
 
+    this.router.navigate(['/contact-us']).then(() => {
+
+      this.popup.open();
+
+    });
+
+  }
   private route = inject(ActivatedRoute);
 service: Service | undefined;
 

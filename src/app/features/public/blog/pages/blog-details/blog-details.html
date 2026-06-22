@@ -8,15 +8,13 @@
 
       <div>
 
-        <span
-          class="inline-flex px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-medium">
+        <span class="inline-flex px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-medium">
 
           {{ blogData.badge }}
 
         </span>
 
-        <h2
-          class="mt-6 text-4xl lg:text-5xl font-bold text-gray-900">
+        <h2 class="mt-6 text-4xl lg:text-5xl font-bold text-gray-900">
 
           {{ blogData.title }}
 
@@ -26,8 +24,7 @@
 
         </h2>
 
-        <p
-          class="mt-6 text-lg text-gray-600 max-w-3xl leading-relaxed">
+        <p class="mt-6 text-lg text-gray-600 max-w-3xl leading-relaxed">
 
           {{ blogData.description }}
 
@@ -50,38 +47,32 @@
 
           <div class="overflow-hidden">
 
-            <img
-              [src]="blogData.featuredBlog.image"
-              [alt]="blogData.featuredBlog.title"
+            <img [src]="blogData.featuredBlog.image" [alt]="blogData.featuredBlog.title"
               class="w-full h-[350px] object-cover group-hover:scale-105 transition duration-500">
 
           </div>
 
           <div class="p-8">
 
-            <span
-              class="inline-flex px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm">
+            <span class="inline-flex px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm">
 
               {{ blogData.featuredBlog.category }}
 
             </span>
 
-            <h3
-              class="mt-5 text-3xl font-bold text-gray-900">
+            <h3 class="mt-5 text-3xl font-bold text-gray-900">
 
               {{ blogData.featuredBlog.title }}
 
             </h3>
 
-            <p
-              class="mt-4 text-gray-600 leading-relaxed">
+            <p class="mt-4 text-gray-600 leading-relaxed">
 
               {{ blogData.featuredBlog.description }}
 
             </p>
 
-            <a
-              [routerLink]="blogData.featuredBlog.route"
+            <a [routerLink]="blogData.featuredBlog.route"
               class="inline-flex items-center mt-6 text-blue-600 font-semibold">
 
               {{ blogData.featuredBlog.buttonText }}
@@ -95,57 +86,56 @@
       </div>
 
       <!-- Side Blogs -->
+    <div class="lg:col-span-6">
 
-      <div class="lg:col-span-6">
+  <div class="space-y-6">
 
-        <div class="space-y-6">
+    @for (blog of blogs; track blog.slug) {
 
-          @for (blog of blogData.blogs; track blog.title) {
+      <article
+        class="group flex gap-5 bg-gray-50 rounded-3xl p-5 hover:shadow-xl transition">
 
-            <article
-              class="group flex gap-5 bg-gray-50 rounded-3xl p-5 hover:shadow-xl transition">
+        <img
+          [src]="blog.imageUrl"
+          [alt]="blog.title"
+          class="w-36 h-32 object-cover rounded-2xl">
 
-              <img
-                [src]="blog.image"
-                [alt]="blog.title"
-                class="w-36 h-32 object-cover rounded-2xl">
+        <div class="flex-1">
 
-              <div>
+          <span class="text-blue-600 text-sm font-medium">
 
-                <span
-                  class="text-blue-600 text-sm font-medium">
+            {{ blog.createdAt | date:'dd MMM yyyy' }}
 
-                  {{ blog.category }}
+          </span>
 
-                </span>
+          <h3 class="mt-2 text-xl font-bold text-gray-900">
 
-                <h3
-                  class="mt-2 text-xl font-bold text-gray-900">
+            {{ blog.title }}
 
-                  {{ blog.title }}
+          </h3>
 
-                </h3>
+          <a
+            [routerLink]="['/blogs', blog.slug]"
+            class="inline-flex mt-4 text-blue-600 font-semibold hover:underline">
 
-                <a
-                  [routerLink]="blog.route"
-                  class="inline-flex mt-4 text-blue-600 font-semibold">
+            Read More →
 
-                  {{ blog.buttonText }}
-
-                </a>
-
-              </div>
-
-            </article>
-
-          }
+          </a>
 
         </div>
 
-      </div>
+      </article>
 
-    </div>
+    } @empty {
+
+      <p>No blogs found.</p>
+
+    }
 
   </div>
 
+</div>
+
+    </div>
+</div>
 </section>

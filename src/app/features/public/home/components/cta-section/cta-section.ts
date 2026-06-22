@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ContactPopupService } from '../../../../../core/services/contact-popup-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cta-section',
@@ -9,7 +11,20 @@ import { RouterLink } from '@angular/router';
   styleUrl: './cta-section.scss',
 })
 export class CtaSection {
+ constructor(
+    private router: Router,
+    private popup: ContactPopupService,
+  ) {
+  }
+   openContactModal(): void {
 
+    this.router.navigate(['/contact-us']).then(() => {
+
+      this.popup.open();
+
+    });
+
+  }
   content = {
     badge: "Let's Build Something Exceptional",
 
@@ -25,7 +40,7 @@ export class CtaSection {
 
     secondaryButton: {
       label: 'Explore Services',
-      route: '/services'
+     route: '/services/residential-electrical-services'
     }
   };
 

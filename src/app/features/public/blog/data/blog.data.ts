@@ -28,47 +28,5 @@ export const BLOG_DATA: BlogSectionData = {
     buttonText: 'Read Article →'
   },
 
-  blogs: [
-    {
-      category: 'Electrical Engineering',
-
-      title:
-        'Importance Of Electrical Audits For Industries',
-
-      image:
-        'https://images.unsplash.com/photo-1466611653911-95081537e5b7',
-
-      route: '/blogs/electrical-audit-guide',
-
-      buttonText: 'Read More →'
-    },
-
-    {
-      category: 'Renewable Energy',
-
-      title:
-        'Future Trends In Renewable Energy Solutions',
-
-      image:
-        'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e',
-
-      route: '/blogs/renewable-energy-trends',
-
-      buttonText: 'Read More →'
-    },
-
-    {
-      category: 'Infrastructure',
-
-      title:
-        'Building Reliable Industrial Infrastructure',
-
-      image:
-        'https://images.unsplash.com/photo-1517048676732-d65bc937f952',
-
-      route: '/blogs/industrial-infrastructure',
-
-      buttonText: 'Read More →'
-    }
-  ]
+  
 };

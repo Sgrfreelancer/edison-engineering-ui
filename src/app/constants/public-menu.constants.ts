@@ -65,26 +65,6 @@ export const PUBLIC_MENU = [
   {
     label: 'Cities',
     children: [
-
-      {
-        label: 'Pune',
-        route: '/cities/pune'
-      },
-
-      {
-        label: 'Mumbai',
-        route: '/cities/mumbai'
-      },
-
-      {
-        label: 'Nashik',
-        route: '/cities/nashik'
-      },
-
-      {
-        label: 'Chhatrapati Sambhajinagar',
-        route: '/cities/chhatrapati-sambhajinagar'
-      }
     ]
   },
 

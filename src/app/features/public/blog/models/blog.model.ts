@@ -18,5 +18,4 @@ export interface BlogSectionData {
 
   featuredBlog: BlogItem;
 
-  blogs: BlogItem[];
 }
