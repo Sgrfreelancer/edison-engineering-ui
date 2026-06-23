@@ -13,13 +13,14 @@ import {
 import {
   PublicFooter
 } from '../../shared/public-footer/public-footer';
-
+import {ContactPopup} from '../../shared/contact-popup/contact-popup/contact-popup'
 @Component({
   selector: 'app-public-layout',
   imports: [
     RouterOutlet,
     PublicHeader,
-    PublicFooter
+    PublicFooter,
+    ContactPopup
   ],
   templateUrl: './public-layout.html',
   styleUrl: './public-layout.scss'

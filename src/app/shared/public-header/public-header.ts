@@ -1,5 +1,5 @@
 import {
-  Component
+  Component,inject
 } from '@angular/core';
 
 import {
@@ -14,6 +14,9 @@ import { RouterModule } from '@angular/router';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs';
 import { IMAGE_PATHS } from '../../constants/image-paths';
+import { ContactPopupService } from '../../core/services/contact-popup-service';
+import { CityService } from '../../core/services/citie.service';
+import { City } from '../../core/model/citie.model';
 @Component({
   selector: 'app-public-header',
   imports: [
@@ -23,27 +26,61 @@ import { IMAGE_PATHS } from '../../constants/image-paths';
   styleUrl: './public-header.scss'
 })
 export class PublicHeader {
+   private cityService = inject(CityService);
 imagePaths = IMAGE_PATHS;
-
+ cities: City[] = [];
   menu =
     PUBLIC_MENU;
 
   mobileMenuOpen =
     false;
-
+ selectedLocation = '';
   toggleMobileMenu() {
 
     this.mobileMenuOpen =
       !this.mobileMenuOpen;
   }
    currentRoute = '';
+ngOnInit(): void {
+    this.loadCities();
+  }
 
-  constructor(private router: Router) {
+
+ loadCities(): void {
+  this.cityService.getCities().subscribe({
+    next: (response) => {
+
+      this.cities = response.data;
+
+      if (this.cities.length) {
+        this.selectedLocation = this.cities[0].name;
+      }
+
+      // Find Cities menu
+      const cityMenu = this.menu.find(item => item.label === 'Cities');
+
+      if (cityMenu) {
+        cityMenu.children = this.cities.map(city => ({
+          label: city.name,
+          route: `/cities/${city.slug}`
+        }));
+      }
+
+      console.log(this.menu);
+
+    },
+    error: (error) => {
+      console.error(error);
+    }
+  });
+}
+  constructor(private router: Router,private popup: ContactPopupService,) {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: any) => {
         this.currentRoute = event.urlAfterRedirects;
       });
+      
   }
 
   isActive(route: string): boolean {
@@ -57,4 +94,15 @@ imagePaths = IMAGE_PATHS;
     this.isActive(child.route)
   );
 }
+openContactModal(): void {
+
+    this.router.navigate(['/contact-us']).then(() => {
+
+      this.popup.open();
+
+    });
+
+  }
+
+
 }

@@ -1,108 +1,98 @@
-<footer
-  class="bg-gray-900 text-white mt-20">
+<footer class="bg-gray-900 text-white mt-20">
 
-  <div
-    class="max-w-7xl mx-auto px-6 py-16">
+  <div class="max-w-7xl mx-auto px-6 py-16">
 
-    <div
-      class="grid md:grid-cols-4 gap-10">
+    <div class="grid md:grid-cols-4 gap-10">
 
-      <!-- COMPANY -->
+      <!-- Company -->
 
       <div>
 
-       <a routerLink="/" class="text-2xl font-bold text-blue-700">
+        <a routerLink="/">
 
-        <img [src]="imagePaths.logo" alt="Edison Engineering"
-          class="h-12 w-auto mb-2 object-contain transition-transform duration-300 hover:scale-105">
-      </a>
+          <img
+            [src]="footer.logo"
+            alt="Edison Engineering"
+            class="h-12 w-auto mb-4 object-contain">
+
+        </a>
 
         <p class="text-gray-400">
-
-          Leading solar and electrical
-          engineering company delivering
-          energy-efficient solutions across India.
-
+          {{ footer.company.description }}
         </p>
 
       </div>
 
-      <!-- SERVICES -->
+      <!-- Services -->
 
       <div>
 
-        <h3
-          class="font-semibold mb-4">
-
-          Services
+        <h3 class="font-semibold mb-4">
+          {{ footer.services.title }}
         </h3>
 
         <div class="space-y-2">
 
-          <a
-            routerLink="/services/residential-electrical-services"
-            class="block text-gray-400 hover:text-white">
+          @for (service of footer.services.links; track service.route) {
 
-            Residential Services
-          </a>
+            <a
+              [routerLink]="service.route"
+              class="block text-gray-400 hover:text-white">
 
-          <a
-            routerLink="/services/commercial-electrical-services"
-            class="block text-gray-400 hover:text-white">
+              {{ service.label }}
 
-            Commercial Services
-          </a>
+            </a>
+
+          }
 
         </div>
 
       </div>
 
-      <!-- QUICK LINKS -->
+      <!-- Quick Links -->
 
       <div>
 
-        <h3
-          class="font-semibold mb-4">
-
-          Quick Links
+        <h3 class="font-semibold mb-4">
+          {{ footer.quickLinks.title }}
         </h3>
 
         <div class="space-y-2">
 
-          <a
-            routerLink="/blogs"
-            class="block text-gray-400 hover:text-white">
+          @for (link of footer.quickLinks.links; track link.route) {
 
-            Blogs
-          </a>
+            <a
+              [routerLink]="link.route"
+              class="block text-gray-400 hover:text-white">
 
-          <a
-            routerLink="/contact-us"
-            class="block text-gray-400 hover:text-white">
+              {{ link.label }}
 
-            Contact Us
-          </a>
+            </a>
+
+          }
 
         </div>
 
       </div>
 
-      <!-- CONTACT -->
+      <!-- Contact -->
 
       <div>
 
-        <h3
-          class="font-semibold mb-4">
-
-          Contact
+        <h3 class="font-semibold mb-4">
+          {{ footer.contact.title }}
         </h3>
 
         <p class="text-gray-400">
-          Pune, Maharashtra
+          {{ footer.contact.address }}
         </p>
 
         <p class="text-gray-400 mt-2">
-          info@edisonengineering.in
+          {{ footer.contact.email }}
+        </p>
+
+        <p class="text-gray-400 mt-2">
+          {{ footer.contact.phone }}
         </p>
 
       </div>
@@ -112,8 +102,7 @@
     <div
       class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500">
 
-      © 2026 Edison Engineering.
-      All rights reserved.
+      {{ footer.copyright }}
 
     </div>
 
