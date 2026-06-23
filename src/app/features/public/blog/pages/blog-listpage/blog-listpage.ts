@@ -5,15 +5,15 @@ import { RouterModule } from '@angular/router';
 import { BlogService } from '../../../../blogs/services/blog.service';
 import { ChangeDetectorRef } from '@angular/core';
 @Component({
-  selector: 'app-blog-details',
+  selector: 'app-blog-listpage',
   imports: [
     CommonModule,
     RouterModule
   ],
-  templateUrl: './blog-details.html',
-  styleUrl: './blog-details.scss',
+  templateUrl: './blog-listpage.html',
+  styleUrl: './blog-listpage.scss',
 })
-export class BlogDetails {
+export class BlogListpage {
   constructor(
     private blogService: BlogService,
     private cdr: ChangeDetectorRef
@@ -45,7 +45,7 @@ export class BlogDetails {
         console.log('Array?', Array.isArray(array), array);
 
         this.blogs = Array.isArray(array) ? array : [];
-this.cdr.detectChanges();
+        this.cdr.detectChanges();
       },
 
       error: console.error
@@ -53,6 +53,5 @@ this.cdr.detectChanges();
     });
 
   }
-
 
 }

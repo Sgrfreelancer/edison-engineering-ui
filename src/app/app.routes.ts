@@ -60,7 +60,8 @@ import {
    } from './features/public/aboutus/pages/about-us-details/about-us-details';
 import { ContactUsDetails } from './features/public/contact-us/pages/contact-us-details/contact-us-details';
 import {SolarCalculator} from './features/public/calculator/pages/solar-calculator/solar-calculator'
-import { BlogDetails } from './features/public/blog/pages/blog-details/blog-details';
+import { BlogDetails } from './features/public/blog/component/blog-details/blog-details';
+import {BlogListpage} from './features/public/blog/pages/blog-listpage/blog-listpage';
 import { ServiceDetails } from './features/public/service/pages/service-details/service-details';
 export const routes: Routes = [
 
@@ -116,6 +117,10 @@ export const routes: Routes = [
       },
       {
         path: 'blogs',
+        component:BlogListpage 
+      },
+      {
+        path: 'blogs/:slug',
         component:BlogDetails 
       },
     ]

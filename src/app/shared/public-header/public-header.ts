@@ -40,6 +40,12 @@ imagePaths = IMAGE_PATHS;
     this.mobileMenuOpen =
       !this.mobileMenuOpen;
   }
+    openedMobileMenu: string | null = null;
+
+toggleSubMenu(label: string): void {
+  this.openedMobileMenu =
+    this.openedMobileMenu === label ? null : label;
+}
    currentRoute = '';
 ngOnInit(): void {
     this.loadCities();
