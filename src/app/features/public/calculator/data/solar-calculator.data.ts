@@ -27,12 +27,6 @@ export const SOLAR_CALCULATOR_DATA: SolarCalculatorData = {
     description:
       'See how much you could save with solar.',
 
-    locations: [
-      'Gujarat',
-      'Maharashtra',
-      'Rajasthan'
-    ],
-
     billRange: {
       min: 1000,
       max: 100000,

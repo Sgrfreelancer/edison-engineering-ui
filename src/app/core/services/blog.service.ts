@@ -13,4 +13,8 @@ export class BlogService {
   getBlogs(): Observable<any> {
     return this.http.get<any>(this.getblogurl);
   }
+  getBlogsBySlug(slugId: string): Observable<any> {
+    return this.http.get<any>( `${this.getblogurl}/${slugId}`);
+  
+  }
 }

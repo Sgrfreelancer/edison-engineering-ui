@@ -27,7 +27,6 @@ export interface SolarCalculatorData {
     title: string;
     description: string;
 
-    locations: string[];
 
     billRange: {
       min: number;
