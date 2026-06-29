@@ -68,7 +68,7 @@ export const CITIES: City[] = [
       'Enterprise-grade electrical infrastructure solutions.',
 
     heroImage:
-      'https://images.unsplash.com/photo-1526481280695-3c4691f241ac',
+      'https://images.unsplash.com/photo-1518005020951-eccb494ad742',
 
     description:
       'We deliver electrical and solar projects across commercial and industrial sectors in Mumbai.',

@@ -85,10 +85,10 @@ export const PUBLIC_MENU = [
    {
     label: 'Career',
     children: [
-      {
-        label: 'View Open Positions',
-        route: '/career/careers'
-      },
+      // {
+      //   label: 'View Open Positions',
+      //   route: '/career/careers'
+      // },
      {
         label: 'Explore Culture',
         route: '/career/culture'

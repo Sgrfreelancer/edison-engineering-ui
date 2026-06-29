@@ -69,6 +69,102 @@ export const SERVICES: Service[] = [
         answer: 'Yes, we handle projects of all sizes.'
       }
     ]
+  },
+  {
+    slug: 'industrial-electrical-services',
+
+    title: 'Industrial Electrical Services',
+
+    subtitle: 'Reliable electrical infrastructure for businesses.',
+
+    heroImage: IMAGE_PATHS.services.commercial,
+
+    description:
+      'End-to-end commercial electrical solutions for offices, malls and commercial buildings.',
+
+    benefits: [
+      'Reduced downtime',
+      'Energy optimization',
+      'Certified engineers'
+    ],
+
+    process: [
+      'Assessment',
+      'Planning',
+      'Execution',
+      'Testing'
+    ],
+
+    faqs: [
+      {
+        question: 'Do you handle large commercial projects?',
+        answer: 'Yes, we handle projects of all sizes.'
+      }
+    ]
+  },
+  {
+    slug: 'housing-society-solutions',
+
+    title: 'Housing Society Solutions',
+
+    subtitle: 'Reliable electrical infrastructure for businesses.',
+
+    heroImage: IMAGE_PATHS.services.commercial,
+
+    description:
+      'End-to-end commercial electrical solutions for offices, malls and commercial buildings.',
+
+    benefits: [
+      'Reduced downtime',
+      'Energy optimization',
+      'Certified engineers'
+    ],
+
+    process: [
+      'Assessment',
+      'Planning',
+      'Execution',
+      'Testing'
+    ],
+
+    faqs: [
+      {
+        question: 'Do you handle large commercial projects?',
+        answer: 'Yes, we handle projects of all sizes.'
+      }
+    ]
+  },
+  {
+    slug: 'electrical-audits',
+
+    title: 'Electrical Audits',
+
+    subtitle: 'Reliable electrical infrastructure for businesses.',
+
+    heroImage: IMAGE_PATHS.services.commercial,
+
+    description:
+      'End-to-end commercial electrical solutions for offices, malls and commercial buildings.',
+
+    benefits: [
+      'Reduced downtime',
+      'Energy optimization',
+      'Certified engineers'
+    ],
+
+    process: [
+      'Assessment',
+      'Planning',
+      'Execution',
+      'Testing'
+    ],
+
+    faqs: [
+      {
+        question: 'Do you handle large commercial projects?',
+        answer: 'Yes, we handle projects of all sizes.'
+      }
+    ]
   }
 
 ];

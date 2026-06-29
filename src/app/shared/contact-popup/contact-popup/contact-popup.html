@@ -9,7 +9,7 @@
 
         <span
           class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-medium">
-        {{ popupData.modal.brand.badge }}
+          {{ popupData.modal.brand.badge }}
         </span>
 
         <h2 class="text-4xl font-bold mt-6 leading-tight">
@@ -58,8 +58,14 @@
           <input type="email" name="email" [(ngModel)]="leadPayload.email" placeholder="Email Address" required
             class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-blue-600 focus:ring-4 focus:ring-blue-100 outline-none">
 
-          <input type="text" name="city" [(ngModel)]="leadPayload.city" placeholder="City"
+          <select  name="location" [(ngModel)]="selectedLocation" required
             class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-blue-600 focus:ring-4 focus:ring-blue-100 outline-none">
+
+            <option *ngFor="let city of cities" [value]="city.name">
+              {{ city.name }}
+            </option>
+
+          </select>
 
           <select name="serviceType" [(ngModel)]="leadPayload.serviceType" required
             class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-blue-600 focus:ring-4 focus:ring-blue-100 outline-none">
