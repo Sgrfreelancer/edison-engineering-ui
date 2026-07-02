@@ -17,6 +17,8 @@ import { IMAGE_PATHS } from '../../constants/image-paths';
 import { ContactPopupService } from '../../core/services/contact-popup-service';
 import { CityService } from '../../core/services/citie.service';
 import { City } from '../../core/model/citie.model';
+import { ChangeDetectorRef} from '@angular/core';
+
 @Component({
   selector: 'app-public-header',
   imports: [
@@ -27,6 +29,7 @@ import { City } from '../../core/model/citie.model';
 })
 export class PublicHeader {
    private cityService = inject(CityService);
+   private cdr = inject(ChangeDetectorRef);
 imagePaths = IMAGE_PATHS;
  cities: City[] = [];
   menu =
@@ -73,7 +76,7 @@ ngOnInit(): void {
       }
 
       console.log(this.menu);
-
+this.cdr.detectChanges();
     },
     error: (error) => {
       console.error(error);

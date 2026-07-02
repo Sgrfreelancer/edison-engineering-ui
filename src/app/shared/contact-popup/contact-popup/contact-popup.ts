@@ -8,7 +8,9 @@ import { LeadService } from '../../../core/services/lead.service';
 import { LeadPayload } from '../../../core/model/lead.model';
 
 import { CONTACT_POPUP_DATA } from '../../data/contact-popup.data';
-
+import { CityService } from '../../../core/services/citie.service';
+import { City } from '../../../core/model/citie.model';
+import { ChangeDetectorRef, inject } from '@angular/core';
 @Component({
   selector: 'app-contact-popup',
   standalone: true,
@@ -20,6 +22,10 @@ import { CONTACT_POPUP_DATA } from '../../data/contact-popup.data';
   styleUrl: './contact-popup.scss'
 })
 export class ContactPopup {
+ private cityService = inject(CityService); 
+  private cdr = inject(ChangeDetectorRef);
+  cities: City[] = [];
+    selectedLocation = '';
 
   popupData = CONTACT_POPUP_DATA;
 
@@ -103,6 +109,28 @@ export class ContactPopup {
 
     });
 
+  }
+
+    ngOnInit(): void {
+    this.loadCities();
+  }
+
+
+  loadCities(): void {
+    this.cityService.getCities().subscribe({
+      next: (response) => {
+        this.cities = [...response.data];
+
+        if (this.cities.length) {
+          this.selectedLocation = this.cities[0].name;
+        }
+
+        this.cdr.detectChanges();
+      },
+      error: (error) => {
+        console.error(error);
+      }
+    });
   }
 
 }

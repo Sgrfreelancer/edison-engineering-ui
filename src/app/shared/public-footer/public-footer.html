@@ -10,10 +10,7 @@
 
         <a routerLink="/">
 
-          <img
-            [src]="footer.logo"
-            alt="Edison Engineering"
-            class="h-12 w-auto mb-4 object-contain">
+          <img [src]="footer.logo" alt="Edison Engineering" class="h-12 w-auto mb-4 object-contain">
 
         </a>
 
@@ -35,13 +32,12 @@
 
           @for (service of footer.services.links; track service.route) {
 
-            <a
-              [routerLink]="service.route"
-              class="block text-gray-400 hover:text-white">
+          <a [routerLink]="service.route" routerLinkActive="text-white font-semibold"
+            [routerLinkActiveOptions]="{ exact: true }" class="block text-gray-400 hover:text-white">
 
-              {{ service.label }}
+            {{ service.label }}
 
-            </a>
+          </a>
 
           }
 
@@ -61,13 +57,12 @@
 
           @for (link of footer.quickLinks.links; track link.route) {
 
-            <a
-              [routerLink]="link.route"
-              class="block text-gray-400 hover:text-white">
+          <a [routerLink]="link.route" routerLinkActive="text-white font-semibold"
+            [routerLinkActiveOptions]="{ exact: true }" class="block text-gray-400 hover:text-white">
 
-              {{ link.label }}
+            {{ link.label }}
 
-            </a>
+          </a>
 
           }
 
@@ -99,8 +94,7 @@
 
     </div>
 
-    <div
-      class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500">
+    <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500">
 
       {{ footer.copyright }}
 
